@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Institute of Technology - Neem Ka Thana</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+
+        /* Header */
+        header { background: #0f172a; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; font-weight: bold; color: #f59e0b; }
+        .call-btn { background: #22c55e; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+
+        /* Hero Banner */
+        .hero { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 70px 20px; }
+        .hero h1 { font-size: 32px; margin-bottom: 12px; }
+        .hero p { font-size: 18px; margin-bottom: 25px; color: #cbd5e1; }
+        .hero .btn { background: #f59e0b; color: #000; padding: 12px 24px; border-radius: 5px; font-weight: bold; text-decoration: none; display: inline-block; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 26px; color: #0f172a; }
+
+        /* Courses Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-top: 4px solid #f59e0b; }
+        .card h3 { color: #0f172a; margin-bottom: 8px; font-size: 18px; }
+        .card p { color: #64748b; font-size: 14px; }
+
+        /* Form & Contact */
+        .contact-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 5px; }
+        .submit-btn { width: 100%; background: #2563eb; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; }
+
+        /* Footer */
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Sunrise Institute of Technology</div>
+        <a href="tel:+918003440708" class="call-btn">📞 Call Now</a>
+    </header>
+
+    <div class="hero">
+        <h1>अपने करियर को दें एक नई उड़ान</h1>
+        <p>गवर्नमेंट रिकॉग्नाइज़्ड वोकेशनल व टीचर ट्रेनिंग कोर्सेस | एडमिशन ओपन</p>
+        <a href="#inquiry" class="btn">एडमिशन फॉर्म भरें</a>
+    </div>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>हमारे मुख्य कोर्सेस (Popular Courses)</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>NTT & ECCE</h3>
+                <p>नर्सरी टीचर ट्रेनिंग और अर्ली चाइल्डहुड केयर एजुकेशन डिप्लोमा।</p>
+            </div>
+            <div class="card">
+                <h3>Yoga Teacher Training</h3>
+                <p>योग शिक्षक प्रमाण पत्र एवं डिप्लोमा कोर्स।</p>
+            </div>
+            <div class="card">
+                <h3>Fire & Safety</h3>
+                <p>इंडस्ट्रियल फायर सेफ्टी मैनेजमेंट ट्रेनिंग कोर्स।</p>
+            </div>
+            <div class="card">
+                <h3>Computer Courses</h3>
+                <p>बेसिक कंप्यूटर, DCA, PGDCA और स्किल डेवलपमेंट कोर्सेस।</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="inquiry">
+        <div class="section-title">
+            <h2>एडमिशन / इन्क्वायरी फॉर्म</h2>
+        </div>
+        <div class="contact-box">
+            <form onsubmit="sendToWhatsapp(event)">
+                <div class="form-group">
+                    <label>छात्र का नाम</label>
+                    <input type="text" id="name" required placeholder="अपना पूरा नाम लिखें">
+                </div>
+                <div class="form-group">
+                    <label>मोबाइल नंबर</label>
+                    <input type="tel" id="phone" required placeholder="10 अंकों का मोबाइल नंबर">
+                </div>
+                <div class="form-group">
+                    <label>कोर्स चुनें</label>
+                    <select id="course">
+                        <option value="NTT / ECCE">NTT / ECCE</option>
+                        <option value="Yoga Teacher">Yoga Teacher</option>
+                        <option value="Fire and Safety">Fire and Safety</option>
+                        <option value="Computer Course">Computer Course</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">WhatsApp पर इन्क्वायरी भेजें</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; color: #64748b; font-size: 14px;">
+                पता: नीम का थाना (राजस्थान) | संपर्क: +91 8003440708
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Sunrise Institute of Technology. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let course = document.getElementById('course').value;
+
+            let myNumber = "918003440708";
+            let msg = `नमस्ते Sunrise Institute, मुझे एडमिशन की जानकारी चाहिए:%0A- नाम: ${name}%0A- मोबाइल: ${phone}%0A- कोर्स: ${course}`;
+
+            window.open(`https://wa.me/${myNumber}?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
